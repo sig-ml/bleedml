@@ -30,4 +30,4 @@ print(scores.mean())
 Algorithms Available
 --------------------
 
-- [ ] **gcForests** [Deep Forest: Towards An Alternative to Deep Neural Networks: Zhi-Hua Zhou, Ji Feng 2017](https://arxiv.org/abs/1702.08835)
+- [x] **gcForests** [Deep Learning Forests](https://arxiv.org/abs/1702.08835)
