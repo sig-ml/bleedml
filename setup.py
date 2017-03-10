@@ -9,4 +9,5 @@ setup(name='bleedml',
         author_email='arjoonn.94@gmail.com',
         license='MIT',
         packages=['bleedml'],
+        install_requires=['numpy', 'scipy', 'sklearn'],
         zip_safe=False)
