@@ -18,7 +18,7 @@ class CascadeForest(BaseEstimator, ClassifierMixin):
         tolerance           : what tolerance to stop at?
         validation_fraction : what fraction of data to use for validation during cascade growth?
         """
-        self.n_estimators = n_estimators if n_estimators is not None else 1000
+        self.n_estimators = n_estimators if n_estimators is not None else 100
         self.cv = cv if cv is not None else 3
         self.scoring = scoring if scoring is not None else accuracy_score
         self.tolerance = tolerance if tolerance is not None else 0.01
