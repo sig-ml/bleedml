@@ -10,7 +10,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 
 class CascadeForest(BaseEstimator, ClassifierMixin):
     "From https://arxiv.org/abs/1702.08835"
-    def __init__(self, cv=3, n_estimators=100, scoring=accuracy_score, tolerance=0.01, validation_fraction=0.8):
+    def __init__(self, cv=3, n_estimators=1000, scoring=accuracy_score, tolerance=0.01, validation_fraction=0.8):
         """
         cv                  :(3) how many folds to use for prediction generation in each layer?
         n_estimators        :(100) how many estimators in each layer's forest
@@ -26,6 +26,7 @@ class CascadeForest(BaseEstimator, ClassifierMixin):
 
     def fit(self, X, y):
         # Check data
+        X, y = np.array(X), np.array(y)
         X, y = check_X_y(X, y)
         # Split to grow cascade and validate
         mask = np.random.random(y.shape[0]) < self.validation_fraction
@@ -80,6 +81,7 @@ class CascadeForest(BaseEstimator, ClassifierMixin):
         return self
 
     def predict_proba(self, X):
+        X = np.array(X)
         check_is_fitted(self, ['layers_', 'classes_', 'scores_'])
         X = check_array(X)
         inp_ = X
@@ -90,6 +92,7 @@ class CascadeForest(BaseEstimator, ClassifierMixin):
         return avg_p
 
     def predict(self, X):
+        X = np.array(X)
         X = check_array(X)
         avg_p = self.predict_proba(X)
         labels = np.array([self.classes_[i] for i in np.argmax(avg_p, axis=1)])
