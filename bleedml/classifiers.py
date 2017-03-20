@@ -98,6 +98,7 @@ class CascadeForest(BaseEstimator, ClassifierMixin):
         labels = np.array([self.classes_[i] for i in np.argmax(avg_p, axis=1)])
         return labels
 
+
 if __name__ == '__main__':
     from sklearn.utils.estimator_checks import check_estimator
     check_estimator(CascadeForest)
