@@ -9,7 +9,7 @@ def scan1D(X, y, window=100, estimator_params=dict(n_jobs=-1), cv=3):
     for sample, label in zip(X, y):
         sample_len = len(sample)
         for s in range(sample_len-window):
-            inputs.append(sample[s: s+window])
+            inputs.append(sample[s: s+window].flatten())
             labels.append(label)
             instances.append(instance_count)
         instance_count += 1
@@ -36,8 +36,10 @@ def scan2D(X, y, window=(10, 10), estimator_params=dict(n_jobs=-1), cv=3):
         for s1 in range(sample.shape[0]-window[0]):
             for s2 in range(sample.shape[1]-window[1]):
                 part = sample[s1:s1+window[0], s2:s2+window[1]]
-                inputs.append(part)
+                inputs.append(part.flatten())
                 labels.append(label)
+                instances.append(instance_count)
+        instance_count += 1
     rf = RandomForestClassifier(**estimator_params)
     estimator_params.update({'max_features': 1})
     cf = RandomForestClassifier(**estimator_params)
