@@ -1,3 +1,3 @@
-__version__ = (0, 0, 5)
-__all__ = ['classifiers']
-from bleedml import classifiers
+__version__ = (0, 0, 6)
+__all__ = ['classifiers', 'utils']
+from bleedml import classifiers, utils
