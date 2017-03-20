@@ -23,7 +23,7 @@ def scan1D(X, y, window=100, estimator_params=dict(n_jobs=-1), cv=3):
         mask = [i == instance for i in instances]
         p1 = probas1[mask]
         p2 = probas2[mask]
-        p = np.concatenate([p1.flatten(), p2.flatten())], axis=0)
+        p = np.concatenate([p1.flatten(), p2.flatten()], axis=0)
         probas.append(p)
     return probas
 
@@ -48,7 +48,7 @@ def scan2D(X, y, window=(10, 10), estimator_params=dict(n_jobs=-1), cv=3):
         mask = [i == instance for i in instances]
         p1 = probas1[mask]
         p2 = probas2[mask]
-        p = np.concatenate([p1.flatten(), p2.flatten())], axis=0)
+        p = np.concatenate([p1.flatten(), p2.flatten()], axis=0)
         probas.append(p)
     return probas
 
