@@ -66,3 +66,26 @@ def multi2Dscan(X, y, windows=[(10, 10), (50, 50), (100, 100)],
     scans = [scan2D(X, y, window, estimator_params, cv) for window in windows]
     inputs = np.concatenate(scans, axis=1)
     return inputs
+
+def l2_metric(points, c):
+    return np.linalg.norm(points - c, ord=2, axis=1)
+
+def get_meb(points, epsilon, metric=l2_metric):
+    """
+    As per https://dl.acm.org/citation.cfm?id=644240
+    Find MEB withing epsilon
+    points      : points in N dimensional space
+    epsilon     : come epsilon close to the true MEB
+    metric      : Kernel function
+    """
+    def find_next_c(c, i, points):
+        distances = metric(points, c)
+        furthest_index = np.argmax(distances)
+        p = points[furthest_index]
+        new_c = c + (p - c)*(1 / (i + 1))
+        return new_c, distances.max()
+    c = points[0]
+    iterations = int(1 / epsilon ** 2)
+    for i in range(iterations):
+        c, r = find_next_c(c, i, points)
+    return c, r

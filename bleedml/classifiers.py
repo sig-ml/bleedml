@@ -101,4 +101,4 @@ class CascadeForest(BaseEstimator, ClassifierMixin):
 
 if __name__ == '__main__':
     from sklearn.utils.estimator_checks import check_estimator
-    check_estimator(CascadeForest)
+    #check_estimator(CascadeForest)

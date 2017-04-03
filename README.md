@@ -30,4 +30,11 @@ print(scores.mean())
 Algorithms Available
 --------------------
 
-- [x] **CascadeForests** [Deep Learning Forests](https://arxiv.org/abs/1702.08835)
+- Classifiers
+    - [x] **CascadeForests** [Deep Learning Forests](https://arxiv.org/abs/1702.08835)
+- Utils
+    - [x] **scan1D** [1D windowed scanning] (https://arxiv.org/abs/1702.08835)
+    - [x] **scan2D** [2D windowed scanning] (https://arxiv.org/abs/1702.08835)
+    - [x] **multi1Dscan** [Multigrain 1D windowed scanning] (https://arxiv.org/abs/1702.08835)
+    - [x] **multi2Dscan** [Multigrain 2D windowed scanning] (https://arxiv.org/abs/1702.08835)
+    - [x] **get_meb** [Minimum Enclosing Ball](https://dl.acm.org/citation.cfm?id=644240)
