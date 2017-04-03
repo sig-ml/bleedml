@@ -32,6 +32,7 @@ Algorithms Available
 
 - Classifiers
     - [x] **CascadeForests** [Deep Learning Forests](https://arxiv.org/abs/1702.08835)
+    - [ ] **MCCVM** [Multi Class Core Vector Machine](https://dl.acm.org/citation.cfm?id=1273502)
 - Utils
     - [x] **scan1D** [1D windowed scanning] (https://arxiv.org/abs/1702.08835)
     - [x] **scan2D** [2D windowed scanning] (https://arxiv.org/abs/1702.08835)
