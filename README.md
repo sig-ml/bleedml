@@ -1,7 +1,7 @@
 BleedML
 =======
 
-The aim is o have a pip installable library which implements as may of the "cool" / "latest" / "bleeding edge" algorithms in ML as possible.
+The aim is to have a pip installable library which implements as many of the "cool" / "latest" / "bleeding edge" algorithms in ML as possible.
 
 
 Installation
